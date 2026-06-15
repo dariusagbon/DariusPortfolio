@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Darius Agbon — Virtual Assistant &amp; Programmer | Davao City, Philippines</title>
+<meta name="description" content="Portfolio of Darius Agbon, a Virtual Assistant and Programmer based in Davao City, Philippines, specializing in Java, Python, web development, and digital operations." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://dariusagbon.github.io/" />
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dariusagbon.github.io/" />
+<meta property="og:title" content="Darius Agbon — Virtual Assistant &amp; Programmer" />
+<meta property="og:description" content="Fresh IT graduate from Davao City specializing in Java, Python, PHP, Laravel, and digital operations." />
+<meta property="og:locale" content="en_PH" />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Darius Agbon — Virtual Assistant &amp; Programmer" />
+<meta name="twitter:description" content="Fresh IT graduate from Davao City specializing in Java, Python, PHP, Laravel, and digital operations." />
+
+<!-- Mobile browser theme -->
+<meta name="theme-color" content="#161A23" />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Darius Agbon",
+  "jobTitle": "Virtual Assistant & Programmer",
+  "url": "https://dariusagbon.github.io/",
+  "email": "dariusjayoagbon@gmail.com",
+  "telephone": "+63-963-063-7927",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Davao City",
+    "addressCountry": "PH"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Mindanao"
+  },
+  "sameAs": ["https://github.com/dariusagbon"],
+  "knowsAbout": ["Java", "Python", "PHP", "Laravel", "SQL", "Web Development", "Virtual Assistance", "CRM Systems"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          base:   '#161A23',
+          panel:  '#1F2532',
+          panel2: '#262E3D',
+          line:   '#2E3647',
+          amber:  '#F5A623',
+          teal:   '#5FD0C3',
+          paper:  '#EDEFF4',
+          steel:  '#8C96A8',
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          body:    ['"Inter"', 'sans-serif'],
+          mono:    ['"JetBrains Mono"', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-base text-paper font-body antialiased">
+
+  <!-- Skip link for keyboard / screen reader users -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-amber focus:text-base focus:px-3 focus:py-2 focus:rounded">
+    Skip to main content
+  </a>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="fixed top-0 inset-x-0 z-50 border-b border-line/70 bg-base/90 backdrop-blur supports-[backdrop-filter]:bg-base/70">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
+      <a href="#home" class="font-mono text-sm tracking-[0.2em] text-paper shrink-0" aria-label="Darius Agbon — go to top">
+        DARIUS<span class="text-amber" aria-hidden="true">.</span>AGBON
+      </a>
+
+      <!-- Live timezone clocks (desktop only) -->
+      <div class="hidden lg:flex items-center gap-6 font-mono text-xs text-steel" aria-label="Live time zones">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" aria-hidden="true"></span>
+          <span>Davao</span>
+          <time id="clock-davao" class="text-paper tabular-nums" aria-live="off">--:--</time>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber" aria-hidden="true"></span>
+          <span>Pacific</span>
+          <time id="clock-pacific" class="text-paper tabular-nums" aria-live="off">--:--</time>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation" class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#about" data-nav class="nav-link">About</a>
+        <a href="#skills" data-nav class="nav-link">Skills</a>
+        <a href="#experience" data-nav class="nav-link">Experience</a>
+        <a href="#contact" data-nav class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button id="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden p-2 text-paper">
+        <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-base px-6 py-4 space-y-4">
+      <nav aria-label="Mobile navigation" class="flex flex-col gap-3 text-sm font-medium">
+        <a href="#about" data-nav class="nav-link">About</a>
+        <a href="#skills" data-nav class="nav-link">Skills</a>
+        <a href="#experience" data-nav class="nav-link">Experience</a>
+        <a href="#contact" data-nav class="nav-link">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4 font-mono text-xs text-steel pt-2 border-t border-line" aria-label="Time zones">
+        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" aria-hidden="true"></span>Davao <time id="clock-davao-m" class="text-paper tabular-nums" aria-live="off">--:--</time></div>
+        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber" aria-hidden="true"></span>Pacific <time id="clock-pacific-m" class="text-paper tabular-nums" aria-live="off">--:--</time></div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section id="home" aria-label="Introduction" class="px-6 pt-32 pb-20 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-4">Davao City, Philippines</p>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl leading-[1.1] text-paper">
+          I build the tools and keep operations running.
+        </h1>
+        <p class="mt-4 text-paper/90 font-medium">
+          Virtual Assistant &amp; Programmer
+        </p>
+        <p class="mt-5 text-steel leading-relaxed max-w-md">
+          I'm a fresh BS Information Technology graduate from Davao City who pairs hands-on
+          development — Java, Python, PHP and Laravel — with day-to-day virtual assistance:
+          managing CRMs, organizing data, and keeping digital workflows on track.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-amber text-base font-semibold text-sm px-5 py-3 hover:bg-amber/90 transition">
+            Get in touch
+          </a>
+          <a href="https://github.com/dariusagbon" target="_blank" rel="noopener noreferrer" title="View Darius Agbon's GitHub profile (opens in new tab)" class="inline-flex items-center gap-2 rounded-md border border-line text-paper font-medium text-sm px-5 py-3 hover:border-teal hover:text-teal transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.41 7.86 10.94.57.1.78-.25.78-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.41-5.25 5.7.42.36.78 1.08.78 2.17v3.21c0 .31.21.67.79.55C20.21 21.4 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+            View GitHub
+            <span class="sr-only">(opens in new tab)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Signature element: live status terminal -->
+      <div class="relative">
+        <div class="rounded-lg border border-line bg-panel shadow-2xl shadow-black/40 overflow-hidden" role="img" aria-label="Terminal showing Darius's availability status and skills">
+          <div class="flex items-center gap-2 px-4 py-3 border-b border-line bg-panel2" aria-hidden="true">
+            <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
+            <span class="w-3 h-3 rounded-full bg-amber/60"></span>
+            <span class="w-3 h-3 rounded-full bg-teal/60"></span>
+            <span class="ml-2 font-mono text-xs text-steel">status.sh — running</span>
+          </div>
+          <!-- noscript fallback -->
+          <noscript>
+            <pre class="font-mono text-sm p-5 leading-7 text-paper whitespace-pre-wrap">$ whoami
+Darius Agbon
+Virtual Assistant / Programmer · Davao City, PH
+
+$ check_availability --zone=PST
+status: AVAILABLE
+hours: 07:00 – 15:00 PST · full-time &amp; part-time
+
+$ skills --primary
+Java · Python · PHP · Laravel · SQL
+
+$ connect --github
+github.com/dariusagbon</pre>
+          </noscript>
+          <pre id="terminal" class="font-mono text-[13px] sm:text-sm p-5 leading-7 min-h-[300px] whitespace-pre-wrap" aria-live="polite" aria-atomic="false"></pre>
+        </div>
+        <p class="mt-3 text-xs text-steel font-mono" aria-live="off">Live availability — updates automatically</p>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" aria-labelledby="about-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">About</p>
+      <h2 id="about-heading" class="font-display font-bold text-3xl text-paper mb-10">Profile</h2>
+
+      <div class="grid lg:grid-cols-3 gap-10">
+        <div class="lg:col-span-2 space-y-4 text-steel leading-relaxed">
+          <p>
+            I'm a creative, user-focused IT graduate with hands-on experience in Java and Python
+            development, virtual assistance, and digital operations. I enjoy crafting smooth
+            digital experiences — writing efficient code, analyzing data, and automating the
+            repetitive parts of a workflow so teams can focus on what matters.
+          </p>
+          <p>
+            On the operations side, I'm comfortable working across SharePoint, Salesforce, CRM
+            systems and WordPress, with a strong commitment to clear English communication and
+            quality follow-through. I'm currently looking for a long-term role and happy to commit
+            to it full-time.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="rounded-lg border border-line bg-panel p-5">
+            <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2">Availability</p>
+            <p class="text-paper font-medium">Full-time &amp; part-time</p>
+            <p class="text-steel text-sm mt-1">7:00 AM – 3:00 PM PST</p>
+          </div>
+          <div class="rounded-lg border border-line bg-panel p-5">
+            <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2">Education</p>
+            <p class="text-paper font-medium">BS Information Technology</p>
+            <p class="text-steel text-sm mt-1">University of Mindanao, 2024–2025</p>
+          </div>
+          <div class="rounded-lg border border-line bg-panel p-5">
+            <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2">Certifications</p>
+            <p class="text-paper font-medium">Certiport — Database Specialist</p>
+            <p class="text-paper font-medium mt-1">Certiport — HTML &amp; CSS Specialist</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" aria-labelledby="skills-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Skills</p>
+      <h2 id="skills-heading" class="font-display font-bold text-3xl text-paper mb-10">What I work with</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="rounded-lg border border-line bg-panel p-5">
+          <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">LANG</p>
+          <h3 class="text-paper font-semibold mb-3">Programming</h3>
+          <ul class="space-y-1.5 text-steel text-sm" aria-label="Programming languages">
+            <li>Java</li>
+            <li>Python</li>
+            <li>PHP</li>
+            <li>Laravel</li>
+          </ul>
+        </div>
+
+        <div class="rounded-lg border border-line bg-panel p-5">
+          <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">WEB</p>
+          <h3 class="text-paper font-semibold mb-3">Web &amp; Database</h3>
+          <ul class="space-y-1.5 text-steel text-sm" aria-label="Web and database skills">
+            <li>Web Development</li>
+            <li>Database Specialist</li>
+            <li>HTML &amp; CSS</li>
+          </ul>
+        </div>
+
+        <div class="rounded-lg border border-line bg-panel p-5">
+          <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">OPS</p>
+          <h3 class="text-paper font-semibold mb-3">Operations &amp; Support</h3>
+          <ul class="space-y-1.5 text-steel text-sm" aria-label="Operations and support skills">
+            <li>Product Research</li>
+            <li>Basic Accounting</li>
+            <li>Content Editing</li>
+            <li>Social Media Management</li>
+          </ul>
+        </div>
+
+        <div class="rounded-lg border border-line bg-panel p-5">
+          <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">TOOLS</p>
+          <h3 class="text-paper font-semibold mb-3">Tools &amp; Platforms</h3>
+          <ul class="space-y-1.5 text-steel text-sm" aria-label="Tools and platforms">
+            <li>SharePoint</li>
+            <li>Salesforce &amp; CRM systems</li>
+            <li>WordPress</li>
+            <li>Claude Code / Skills</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" aria-labelledby="experience-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Experience</p>
+      <h2 id="experience-heading" class="font-display font-bold text-3xl text-paper mb-10">Work log</h2>
+
+      <ol class="space-y-10 border-l border-line ml-1 pl-8" aria-label="Work history timeline">
+
+        <li class="relative">
+          <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-amber ring-4 ring-base" aria-hidden="true"></span>
+          <p class="font-mono text-xs text-steel mb-1 tabular-nums"><time datetime="2024/2025">2024 – 2025</time></p>
+          <h3 class="text-paper font-semibold text-lg">Intern Programmer — University of Mindanao</h3>
+          <ul class="mt-3 space-y-2 text-steel text-sm leading-relaxed list-disc list-outside ml-5">
+            <li>Designed and built applications using Java 8 features such as lambda expressions and the Streams API to keep code clean and efficient.</li>
+            <li>Connected Java applications to relational databases with JDBC, writing efficient SQL queries and designing database schemas.</li>
+          </ul>
+        </li>
+
+        <li class="relative">
+          <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-teal ring-4 ring-base" aria-hidden="true"></span>
+          <p class="font-mono text-xs text-steel mb-1 tabular-nums"><time datetime="2023/2024">2023 – 2024</time></p>
+          <h3 class="text-paper font-semibold text-lg">Social Media Manager — Shokuy Shoe Company</h3>
+          <ul class="mt-3 space-y-2 text-steel text-sm leading-relaxed list-disc list-outside ml-5">
+            <li>Worked with the design team to produce graphics, video and other multimedia content that improved brand visibility.</li>
+            <li>Tracked social media trends, algorithms and best practices and adjusted strategy to stay competitive.</li>
+            <li>Monitored performance with Google Analytics, Hootsuite and Sprout Social, turning the data into insights that grew content performance and audience.</li>
+          </ul>
+        </li>
+
+        <li class="relative">
+          <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-steel ring-4 ring-base" aria-hidden="true"></span>
+          <p class="font-mono text-xs text-steel mb-1 tabular-nums">Ongoing</p>
+          <h3 class="text-paper font-semibold text-lg">Product Research — Freelance / E-commerce</h3>
+          <ul class="mt-3 space-y-2 text-steel text-sm leading-relaxed list-disc list-outside ml-5">
+            <li>Source profitable products using Seller AMP SAS and Keepa, keeping the research process efficient and reliable.</li>
+            <li>Find strong leads through reverse search and other product-discovery methods.</li>
+          </ul>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" aria-labelledby="contact-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Contact</p>
+      <h2 id="contact-heading" class="font-display font-bold text-3xl text-paper mb-3">Let's work together</h2>
+      <p class="text-steel max-w-xl mb-10">
+        Open to full-time and part-time roles, available during PST business hours. Reach out
+        directly or send a message below.
+      </p>
+
+      <div class="grid lg:grid-cols-2 gap-10">
+
+        <!-- Direct contact details -->
+        <div class="space-y-3">
+          <button type="button" data-copy="dariusjayoagbon@gmail.com" aria-label="Copy email address to clipboard" class="copy-btn w-full flex items-center justify-between gap-4 rounded-lg border border-line bg-panel p-4 text-left hover:border-teal transition">
+            <span class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              <span>
+                <span class="block text-xs text-steel">Email</span>
+                <span class="block text-paper font-medium">dariusjayoagbon@gmail.com</span>
+              </span>
+            </span>
+            <span class="copy-feedback font-mono text-xs text-steel shrink-0" aria-live="polite">Copy</span>
+          </button>
+
+          <button type="button" data-copy="+63 963 063 7927" aria-label="Copy phone number to clipboard" class="copy-btn w-full flex items-center justify-between gap-4 rounded-lg border border-line bg-panel p-4 text-left hover:border-teal transition">
+            <span class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <span>
+                <span class="block text-xs text-steel">Phone</span>
+                <span class="block text-paper font-medium">+63 963 063 7927</span>
+              </span>
+            </span>
+            <span class="copy-feedback font-mono text-xs text-steel shrink-0" aria-live="polite">Copy</span>
+          </button>
+
+          <div class="w-full flex items-center justify-between gap-4 rounded-lg border border-line bg-panel p-4">
+            <span class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>
+                <span class="block text-xs text-steel">Location</span>
+                <span class="block text-paper font-medium">Davao City, Philippines</span>
+              </span>
+            </span>
+          </div>
+
+          <a href="https://github.com/dariusagbon" target="_blank" rel="noopener noreferrer" title="View Darius Agbon's GitHub profile (opens in new tab)" class="w-full flex items-center justify-between gap-4 rounded-lg border border-line bg-panel p-4 hover:border-teal transition">
+            <span class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-teal shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.41 7.86 10.94.57.1.78-.25.78-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.41-5.25 5.7.42.36.78 1.08.78 2.17v3.21c0 .31.21.67.79.55C20.21 21.4 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+              <span>
+                <span class="block text-xs text-steel">GitHub</span>
+                <span class="block text-paper font-medium">github.com/dariusagbon</span>
+              </span>
+            </span>
+            <span class="font-mono text-xs text-steel" aria-hidden="true">Open ↗</span>
+            <span class="sr-only">(opens in new tab)</span>
+          </a>
+        </div>
+
+        <!-- Message form -->
+        <form id="contact-form" class="space-y-4" novalidate aria-label="Send a message to Darius">
+          <div>
+            <label for="cf-name" class="block text-xs text-steel mb-1.5">Name</label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name"
+              aria-describedby="cf-name-error"
+              class="w-full rounded-md border border-line bg-panel px-3.5 py-2.5 text-paper placeholder:text-steel/60 focus:border-amber outline-none transition" />
+            <span id="cf-name-error" class="field-error-msg" role="alert" aria-live="assertive"></span>
+          </div>
+          <div>
+            <label for="cf-email" class="block text-xs text-steel mb-1.5">Email</label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email"
+              aria-describedby="cf-email-error"
+              class="w-full rounded-md border border-line bg-panel px-3.5 py-2.5 text-paper placeholder:text-steel/60 focus:border-amber outline-none transition" />
+            <span id="cf-email-error" class="field-error-msg" role="alert" aria-live="assertive"></span>
+          </div>
+          <div>
+            <label for="cf-message" class="block text-xs text-steel mb-1.5">Message</label>
+            <textarea id="cf-message" name="message" rows="4" required
+              aria-describedby="cf-message-error"
+              class="w-full rounded-md border border-line bg-panel px-3.5 py-2.5 text-paper placeholder:text-steel/60 focus:border-amber outline-none resize-none transition"></textarea>
+            <span id="cf-message-error" class="field-error-msg" role="alert" aria-live="assertive"></span>
+          </div>
+          <button type="submit" class="w-full rounded-md bg-amber text-base font-semibold text-sm px-5 py-3 hover:bg-amber/90 transition">
+            Send message
+          </button>
+          <p id="form-status" class="text-sm min-h-[1.25rem]" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="px-6 max-w-6xl mx-auto py-10 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4 text-steel text-sm">
+    <p>© <span id="footer-year"></span> Darius Agbon. Built with HTML, Tailwind CSS &amp; JavaScript.</p>
+    <a id="back-to-top" href="#main" class="inline-flex items-center gap-2 text-steel hover:text-amber transition" aria-label="Back to top of page">
+      Back to top
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
