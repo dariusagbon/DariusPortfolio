@@ -1,7 +1,11 @@
 /* ---------- EmailJS Configuration ---------- */
 // Sign up at https://www.emailjs.com/ and replace 'YOUR_PUBLIC_KEY' with your actual public key
-emailjs.init('hUuMmfld80KsHPOxa');
-console.log('EmailJS initialized');
+if (window.emailjs) {
+  emailjs.init('hUuMmfld80KsHPOxa');
+  console.log('EmailJS initialized');
+} else {
+  console.warn('EmailJS library not loaded; contact form email will be disabled.');
+}
 
 /* ---------- Dynamic copyright year ---------- */
 document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -156,68 +160,73 @@ document.getElementById('back-to-top').addEventListener('click', () => {
 const terminalEl = document.getElementById('terminal');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const terminalLines = [
-  { text: '$ whoami', cls: 'text-teal' },
-  { text: 'Darius Agbon', cls: 'text-paper' },
-  { text: 'Virtual Assistant / Programmer · Davao City, PH', cls: 'text-steel' },
-  { text: '', cls: '' },
-  { text: '$ check_availability --zone=PST', cls: 'text-teal' },
-  { text: 'status: AVAILABLE', cls: 'text-amber font-semibold' },
-  { text: 'hours: 07:00 – 15:00 PST · full-time & part-time', cls: 'text-steel' },
-  { text: '', cls: '' },
-  { text: '$ skills --primary', cls: 'text-teal' },
-  { text: 'Java · Python · PHP · Laravel · SQL', cls: 'text-paper' },
-  { text: '', cls: '' },
-  { text: '$ connect --github', cls: 'text-teal' },
-  { text: 'github.com/dariusagbon', cls: 'text-amber' },
-];
+if (!terminalEl) {
+  console.error('Live availability terminal element not found.');
+} else {
+    const terminalLines = [
+    { text: '$ whoami', cls: 'text-teal' },
+    { text: 'Darius Agbon', cls: 'text-paper' },
+    { text: 'Virtual Assistant / Programmer · Davao City, PH', cls: 'text-steel' },
+    { text: '', cls: '' },
+    { text: '$ check_availability --zone=PST', cls: 'text-teal' },
+    { text: 'status: AVAILABLE', cls: 'text-amber font-semibold' },
+    { text: 'hours: 07:00 – 15:00 PST · full-time & part-time', cls: 'text-steel' },
+    { text: '', cls: '' },
+    { text: '$ skills --primary', cls: 'text-teal' },
+    { text: 'Java · Python · PHP · Laravel · SQL', cls: 'text-paper' },
+    { text: '', cls: '' },
+    { text: '$ connect --github', cls: 'text-teal' },
+    { text: 'github.com/dariusagbon', cls: 'text-amber' },
+  ];
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-function renderStatic() {
-  terminalEl.innerHTML = terminalLines
-    .map(line => `<span class="${line.cls} block">${line.text || '\u00A0'}</span>`)
-    .join('') + '<span class="cursor text-amber" aria-hidden="true">▌</span>';
-}
-
-async function typeTerminal() {
-  if (reduceMotion) { renderStatic(); return; }
-
-  terminalEl.innerHTML = '';
-  for (const line of terminalLines) {
-    const lineEl = document.createElement('span');
-    lineEl.className = `${line.cls} block`;
-    terminalEl.appendChild(lineEl);
-
-    if (!line.text) {
-      lineEl.innerHTML = '\u00A0';
-      await sleep(180);
-      continue;
-    }
-
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor text-amber';
-    cursor.textContent = '▌';
-    cursor.setAttribute('aria-hidden', 'true');
-    terminalEl.appendChild(cursor);
-
-    const isCommand = line.cls.includes('teal');
-    for (const char of line.text) {
-      lineEl.textContent += char;
-      await sleep(isCommand ? 38 : 14);
-    }
-    cursor.remove();
-    await sleep(220);
+  function renderStatic() {
+    terminalEl.innerHTML = terminalLines
+      .map(line => `<span class="${line.cls} block">${line.text || '\u00A0'}</span>`)
+      .join('') + '<span class="cursor text-amber" aria-hidden="true">▌</span>';
   }
 
-  const finalCursor = document.createElement('span');
-  finalCursor.className = 'cursor text-amber';
-  finalCursor.textContent = '▌';
-  finalCursor.setAttribute('aria-hidden', 'true');
-  terminalEl.appendChild(finalCursor);
+  async function typeTerminal() {
+    if (reduceMotion) { renderStatic(); return; }
 
-  await sleep(3000);
+    terminalEl.innerHTML = '';
+    for (const line of terminalLines) {
+      const lineEl = document.createElement('span');
+      lineEl.className = `${line.cls} block`;
+      terminalEl.appendChild(lineEl);
+
+      if (!line.text) {
+        lineEl.innerHTML = '\u00A0';
+        await sleep(180);
+        continue;
+      }
+
+      const cursor = document.createElement('span');
+      cursor.className = 'cursor text-amber';
+      cursor.textContent = '▌';
+      cursor.setAttribute('aria-hidden', 'true');
+      terminalEl.appendChild(cursor);
+
+      const isCommand = line.cls.includes('teal');
+      for (const char of line.text) {
+        lineEl.textContent += char;
+        await sleep(isCommand ? 38 : 14);
+      }
+      cursor.remove();
+      await sleep(220);
+    }
+
+    const finalCursor = document.createElement('span');
+    finalCursor.className = 'cursor text-amber';
+    finalCursor.textContent = '▌';
+    finalCursor.setAttribute('aria-hidden', 'true');
+    terminalEl.appendChild(finalCursor);
+
+    await sleep(3000);
+    typeTerminal();
+  }
+
   typeTerminal();
 }
 
-typeTerminal();
