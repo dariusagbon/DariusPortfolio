@@ -1,6 +1,7 @@
 /* ---------- EmailJS Configuration ---------- */
 // Sign up at https://www.emailjs.com/ and replace 'YOUR_PUBLIC_KEY' with your actual public key
-if (window.emailjs) {
+const emailjsAvailable = typeof window.emailjs !== 'undefined';
+if (emailjsAvailable) {
   emailjs.init('hUuMmfld80KsHPOxa');
   console.log('EmailJS initialized');
 } else {
@@ -129,6 +130,13 @@ contactForm.addEventListener('submit', (e) => {
   formStatus.className = 'text-sm min-h-[1.25rem] text-steel';
 
   console.log('Form submitted with:', { name, email, message });
+
+  if (!emailjsAvailable) {
+    console.error('Cannot send email because EmailJS is unavailable.');
+    formStatus.textContent = 'Message service is unavailable right now. Please email me directly.';
+    formStatus.className = 'text-sm min-h-[1.25rem] text-amber';
+    return;
+  }
 
   // Send email via EmailJS
   emailjs.send('service_tptl54j', 'template_7ud06gp', {
