@@ -237,4 +237,3 @@ if (!terminalEl) {
 
   typeTerminal();
 }
-

@@ -113,6 +113,7 @@
         <a href="#about" data-nav class="nav-link">About</a>
         <a href="#skills" data-nav class="nav-link">Skills</a>
         <a href="#experience" data-nav class="nav-link">Experience</a>
+        <a href="#works" data-nav class="nav-link">Works</a>
         <a href="#contact" data-nav class="nav-link">Contact</a>
       </nav>
 
@@ -129,6 +130,7 @@
         <a href="#about" data-nav class="nav-link">About</a>
         <a href="#skills" data-nav class="nav-link">Skills</a>
         <a href="#experience" data-nav class="nav-link">Experience</a>
+        <a href="#works" data-nav class="nav-link">Works</a>
         <a href="#contact" data-nav class="nav-link">Contact</a>
       </nav>
       <div class="flex items-center gap-4 font-mono text-xs text-steel pt-2 border-t border-line" aria-label="Time zones">
@@ -226,11 +228,6 @@ github.com/dariusagbon</pre>
 
         <div class="space-y-4">
           <div class="rounded-lg border border-line bg-panel p-5">
-            <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2">Availability</p>
-            <p class="text-paper font-medium">Full-time &amp; part-time</p>
-            <p class="text-steel text-sm mt-1">7:00 AM – 3:00 PM PST</p>
-          </div>
-          <div class="rounded-lg border border-line bg-panel p-5">
             <p class="font-mono text-xs uppercase tracking-widest text-steel mb-2">Education</p>
             <p class="text-paper font-medium">BS Information Technology</p>
             <p class="text-steel text-sm mt-1">University of Mindanao, 2024–2025</p>
@@ -258,6 +255,8 @@ github.com/dariusagbon</pre>
             <li>Python</li>
             <li>PHP</li>
             <li>Laravel</li>
+            <li>SQL</li>
+            <li>JavaScript  </li>
           </ul>
         </div>
 
@@ -335,6 +334,84 @@ github.com/dariusagbon</pre>
 
       </ol>
     </section>
+
+    <!-- ============ WORKS ============ -->
+    <section id="works" aria-labelledby="works-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
+      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Works</p>
+      <h2 id="works-heading" class="font-display font-bold text-3xl text-paper mb-3">Selected works</h2>
+      <p class="text-steel max-w-xl mb-12">
+        A mix of websites I've built, videos I've edited, and UI designs I've put together.
+      </p>
+
+      <!-- ---- Websites ---- -->
+      <div class="mb-14">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-amber mb-5">Websites</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Website projects">
+
+          <!--
+            WORK CARD TEMPLATE — copy/paste this block for each project.
+            1. Replace images/work-placeholder.jpg with your image path
+            2. Replace the alt text, title, description
+            3. Replace href="#" with your live link / repo link
+          -->
+          <a href="https://lexicase-legal-case-management-system.onrender.com/" target="_blank" rel="noopener noreferrer" class="group rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
+            <div class="aspect-video bg-panel2 overflow-hidden">
+              <img src="images/LexiCase.png" alt="Screenshot of LexiCase" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-4">
+              <h4 class="text-paper font-semibold">LexiCase</h4>
+              <p class="text-steel text-sm mt-1">Legal management system </p>
+              <span class="inline-flex items-center gap-1 font-mono text-xs text-teal mt-3">View site ↗</span>
+            </div>
+          </a>
+
+          <a href="https://thrift-haven-zvk1.vercel.app/" target="_blank" rel="noopener noreferrer" class="group rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
+            <div class="aspect-video bg-panel2 overflow-hidden">
+              <img src="images/ThriftHaven.png" alt="Screenshot of ThriftHaven" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-4">
+              <h4 class="text-paper font-semibold">ThriftHaven</h4>
+              <p class="text-steel text-sm mt-1">E-commerce platform for second-hand goods.</p>
+              <span class="inline-flex items-center gap-1 font-mono text-xs text-teal mt-3">View site ↗</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+        <!-- ---- Video Edits ---- -->
+      <div class="mb-14">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-amber mb-5">Video Edits</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Video editing projects">
+
+          <div class="group relative rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
+            <div class="relative aspect-video bg-panel2 overflow-hidden">
+              <video
+                src="videos/vid.mp4"
+                class="w-full h-full object-cover"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                aria-label="Advertising video for King Desini">
+                Your browser doesn't support embedded video.
+              </video>
+              <button type="button" data-unmute class="absolute bottom-3 right-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-base/70 text-paper hover:bg-base transition" aria-pressed="false" aria-label="Unmute video">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 unmute-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+              </button>
+            </div>
+            <div class="p-4">
+              <h4 class="text-paper font-semibold">King Desini</h4>
+              <p class="text-steel text-sm mt-1">Advertising video for a local business.</p>
+              <a href="videos/vid.mp4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-mono text-xs text-teal mt-3 hover:underline">Open full video ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>  
+  </section>
 
     <!-- ============ CONTACT ============ -->
     <section id="contact" aria-labelledby="contact-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
