@@ -48,6 +48,17 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
   });
 });
 
+/* ---------- Project case-study disclosures ---------- */
+document.querySelectorAll('.case-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const details = document.getElementById(button.getAttribute('aria-controls'));
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!isOpen));
+    button.querySelector('span').textContent = isOpen ? '+' : '−';
+    details.hidden = isOpen;
+  });
+});
+
 /* ---------- Scrollspy: highlight active nav link ---------- */
 const sections = document.querySelectorAll('main section[id]');
 const navLinks = document.querySelectorAll('[data-nav]');

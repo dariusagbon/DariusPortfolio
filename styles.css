@@ -23,6 +23,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .nav-link { color: #8C96A8; transition: color .2s ease; }
 .nav-link.active, .nav-link:hover { color: #F5A623; }
 
+.project-card { transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.project-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0, 0, 0, .2); }
+.tech-tag { border: 1px solid #2E3647; border-radius: 999px; color: #8C96A8; font: 500 .68rem/1.2 "JetBrains Mono", monospace; padding: .3rem .55rem; }
+.case-toggle { color: #5FD0C3; font: 500 .7rem/1.2 "JetBrains Mono", monospace; text-align: left; }
+.case-toggle:hover { color: #F5A623; }
+.case-study { border-left: 2px solid #5FD0C3; color: #8C96A8; font-size: .875rem; line-height: 1.6; margin-top: .75rem; padding-left: .75rem; }
+
 /* Form field error state */
 .field-error { border-color: #f87171 !important; }
 .field-error-msg { color: #f87171; font-size: 0.75rem; margin-top: 0.25rem; display: block; min-height: 1rem; }
