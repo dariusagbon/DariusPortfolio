@@ -38,6 +38,7 @@ Technology professional who combines Java, Python, PHP, and Laravel development 
 
 - LexiCase: Legal case management system built with Laravel, MySQL, and Blade.
 - ThriftHaven: Second-hand e-commerce platform built with HTML, CSS, and JavaScript.
+- Automated LinkedIn Content Pipeline: n8n workflow that researches, writes, quality-checks, and publishes LinkedIn content with human-review fallback, LinkedIn API integration, and audit logging.
 
 ## Education
 

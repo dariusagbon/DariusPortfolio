@@ -346,8 +346,29 @@ github.com/dariusagbon</pre>
       <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Works</p>
       <h2 id="works-heading" class="font-display font-bold text-3xl text-paper mb-3">Selected works</h2>
       <p class="text-steel max-w-xl mb-12">
-        A mix of websites I've built, videos I've edited, and UI designs I've put together.
+        A mix of websites I've built, workflow automations I've designed, videos I've edited, and UI designs I've put together.
       </p>
+
+      <!-- ---- Automation ---- -->
+      <div class="mb-14">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-amber mb-5">Automation</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Automation projects">
+
+          <article class="project-card group rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
+            <div class="aspect-video bg-panel2 overflow-hidden">
+              <img src="images/automated-linkedin-content-pipeline.svg" alt="n8n workflow canvas for an automated LinkedIn content pipeline" class="w-full h-full object-contain group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="p-4">
+              <h4 class="text-paper font-semibold">Automated LinkedIn Content Pipeline</h4>
+              <p class="text-steel text-sm mt-1">Daily research, writing, QA, and publishing workflow.</p>
+              <div class="flex flex-wrap gap-2 mt-3" aria-label="Automated LinkedIn Content Pipeline technologies"><span class="tech-tag">Automation</span><span class="tech-tag">n8n</span><span class="tech-tag">API Integration</span><span class="tech-tag">LLM Workflows</span><span class="tech-tag">No-Code/Low-Code</span></div>
+              <button type="button" class="case-toggle mt-4" aria-expanded="false" aria-controls="linkedin-pipeline-details">Read case study <span aria-hidden="true">+</span></button>
+              <div id="linkedin-pipeline-details" class="case-study" hidden><p>Problem: producing consistent, high-quality LinkedIn content manually takes hours each week. Solution: a daily n8n workflow loads configuration, researches topics through RSS and live web search, merges and dedupes results against content history, scores candidates, generates a draft with an LLM, and runs a separate humanize and quality-scoring pass. Posts scoring 80 or higher publish through the LinkedIn API; lower-scoring drafts route to human review. Every published, review, and failure outcome is logged to a tracking sheet. Outcome: designed to reduce weekly content-production time while keeping publishing consistent and auditable.</p></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
 
       <!-- ---- Websites ---- -->
       <div class="mb-14">
