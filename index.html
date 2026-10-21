@@ -142,6 +142,7 @@
         <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber" aria-hidden="true"></span>Pacific <time id="clock-pacific-m" class="text-paper tabular-nums" aria-live="off">--:--</time></div>
       </div>
     </div>
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
   </header>
 
   <main id="main" class="relative">
@@ -158,7 +159,8 @@
           I build the tools and keep operations <span class="text-amber">running.</span>
         </h1>
         <p class="mt-5 font-mono text-sm text-teal">
-          Virtual Assistant &amp; Programmer
+          <span class="sr-only">Virtual Assistant, Programmer, Automation Builder, and Web Developer</span>
+          <span aria-hidden="true"><span class="text-steel">&gt;</span> <span id="role-rotator">Virtual Assistant &amp; Programmer</span><span class="cursor text-amber">▌</span></span>
         </p>
         <p class="mt-5 text-steel leading-relaxed max-w-md">
           I build practical software and keep digital operations organized. My work combines
@@ -168,7 +170,7 @@
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md bg-amber text-base font-semibold text-sm px-5 py-3 hover:bg-amber/90 hover:-translate-y-0.5 transition shadow-lg shadow-amber/20">
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md bg-amber text-base font-semibold text-sm px-5 py-3 hover:bg-amber/90 hover:-translate-y-0.5 transition shadow-lg shadow-amber/20 btn-shine">
             Get in touch <span aria-hidden="true">→</span>
           </a>
           <a href="https://github.com/dariusagbon" target="_blank" rel="noopener noreferrer" title="View Darius Agbon's GitHub profile (opens in new tab)" class="inline-flex items-center gap-2 rounded-md border border-line text-paper font-medium text-sm px-5 py-3 hover:border-teal hover:text-teal transition">
@@ -184,12 +186,12 @@
 
       <!-- Signature element: live status terminal -->
       <div class="relative">
-        <div class="terminal-card rounded-xl border border-line bg-panel shadow-2xl shadow-black/40 overflow-hidden" role="img" aria-label="Terminal showing Darius's availability status and skills">
+        <div id="terminal-card" class="terminal-card rounded-xl border border-line bg-panel shadow-2xl shadow-black/40 overflow-hidden" role="region" aria-label="Interactive terminal: Darius's availability, skills, and projects">
           <div class="flex items-center gap-2 px-4 py-3 border-b border-line bg-panel2" aria-hidden="true">
             <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
             <span class="w-3 h-3 rounded-full bg-amber/60"></span>
             <span class="w-3 h-3 rounded-full bg-teal/60"></span>
-            <span class="ml-2 font-mono text-xs text-steel">status.sh — running</span>
+            <span class="ml-2 font-mono text-xs text-steel">darius@portfolio — zsh</span>
           </div>
           <!-- noscript fallback -->
           <noscript>
@@ -207,14 +209,29 @@ Java · Python · PHP · Laravel · SQL · JavaScript
 $ connect --github
 github.com/dariusagbon</pre>
           </noscript>
-          <pre id="terminal" class="font-mono text-[13px] sm:text-sm p-5 leading-7 min-h-[420px] whitespace-pre-wrap" aria-live="polite" aria-atomic="false"></pre>
+          <div id="terminal-body" class="terminal-body font-mono text-[13px] sm:text-sm p-5 leading-7 h-[440px] overflow-y-auto">
+            <pre id="terminal" class="whitespace-pre-wrap font-mono" aria-live="polite" aria-atomic="false"></pre>
+            <form id="terminal-form" class="hidden items-center gap-2" autocomplete="off">
+              <label for="terminal-input" class="text-teal shrink-0">$</label>
+              <input id="terminal-input" type="text" spellcheck="false" autocapitalize="off" enterkeyhint="send" aria-label="Type a terminal command, for example help"
+                class="flex-1 min-w-0 bg-transparent border-0 p-0 text-paper caret-amber outline-none focus:outline-none" />
+            </form>
+          </div>
         </div>
-        <p class="mt-3 text-xs text-steel font-mono" aria-live="off">Live availability — updates automatically</p>
+        <p class="mt-3 text-xs text-steel font-mono">Try it: click the terminal and type <kbd class="kbd">help</kbd></p>
       </div>
     </section>
 
+    <!-- ============ TECH STRIP ============ -->
+    <div class="marquee border-y border-line bg-panel/40" aria-label="Technologies I use">
+      <div class="marquee-track">
+        <ul class="marquee-row"><li>Java</li><li>Python</li><li>PHP</li><li>Laravel</li><li>SQL</li><li>JavaScript</li><li>n8n</li><li>Salesforce</li><li>SharePoint</li><li>WordPress</li><li>Tailwind CSS</li><li>Claude Code</li></ul>
+        <ul class="marquee-row" aria-hidden="true"><li>Java</li><li>Python</li><li>PHP</li><li>Laravel</li><li>SQL</li><li>JavaScript</li><li>n8n</li><li>Salesforce</li><li>SharePoint</li><li>WordPress</li><li>Tailwind CSS</li><li>Claude Code</li></ul>
+      </div>
+    </div>
+
     <!-- ============ ABOUT ============ -->
-    <section id="about" aria-labelledby="about-heading" class="reveal px-6 max-w-6xl mx-auto py-24 border-t border-line">
+    <section id="about" aria-labelledby="about-heading" class="reveal px-6 max-w-6xl mx-auto py-24">
       <p class="section-eyebrow"><span>01</span>About</p>
       <h2 id="about-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-10">Profile</h2>
 
@@ -260,8 +277,8 @@ github.com/dariusagbon</pre>
       <p class="section-eyebrow"><span>02</span>Skills</p>
       <h2 id="skills-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-10">What I work with</h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="skill-card">
+      <div class="stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="skill-card spotlight">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">LANGUAGE</p>
           <h3 class="text-paper font-semibold mb-4">Programming</h3>
           <ul class="flex flex-wrap gap-2" aria-label="Programming languages">
@@ -274,7 +291,7 @@ github.com/dariusagbon</pre>
           </ul>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card spotlight">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">WEB</p>
           <h3 class="text-paper font-semibold mb-4">Web &amp; Database</h3>
           <ul class="flex flex-wrap gap-2" aria-label="Web and database skills">
@@ -284,7 +301,7 @@ github.com/dariusagbon</pre>
           </ul>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card spotlight">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">OPS</p>
           <h3 class="text-paper font-semibold mb-4">Operations &amp; Support</h3>
           <ul class="flex flex-wrap gap-2" aria-label="Operations and support skills">
@@ -295,7 +312,7 @@ github.com/dariusagbon</pre>
           </ul>
         </div>
 
-        <div class="skill-card">
+        <div class="skill-card spotlight">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">TOOLS</p>
           <h3 class="text-paper font-semibold mb-4">Tools &amp; Platforms</h3>
           <ul class="flex flex-wrap gap-2" aria-label="Tools and platforms">
@@ -313,7 +330,7 @@ github.com/dariusagbon</pre>
       <p class="section-eyebrow"><span>03</span>Experience</p>
       <h2 id="experience-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-10">Work log</h2>
 
-      <ol class="space-y-12 border-l border-line ml-1 pl-8" aria-label="Work history timeline">
+      <ol class="stagger space-y-12 border-l border-line ml-1 pl-8" aria-label="Work history timeline">
 
         <li class="relative md:grid md:grid-cols-[9rem_1fr] md:gap-8">
           <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-amber ring-4 ring-base" aria-hidden="true"></span>
@@ -380,9 +397,9 @@ github.com/dariusagbon</pre>
         3. Give the case study a unique id and point aria-controls at it
         4. Replace the href with your live link / repo link
       -->
-      <div id="works-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Projects">
+      <div id="works-grid" class="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Projects">
 
-        <article class="project-card group" data-category="web">
+        <article class="project-card spotlight group" data-category="web">
           <div class="project-media">
             <img src="images/XclusiveCare.webp" alt="Xclusive Care Services homepage with a caregiver and senior client and the headline Compassionate In-Home Care Across Georgia" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
             <span class="project-badge">Website</span>
@@ -399,7 +416,7 @@ github.com/dariusagbon</pre>
           </div>
         </article>
 
-        <article class="project-card group" data-category="web">
+        <article class="project-card spotlight group" data-category="web">
           <div class="project-media">
             <img src="images/LexiCase.png" alt="LexiCase legal case management system dashboard" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
             <span class="project-badge">Website</span>
@@ -416,7 +433,7 @@ github.com/dariusagbon</pre>
           </div>
         </article>
 
-        <article class="project-card group" data-category="web">
+        <article class="project-card spotlight group" data-category="web">
           <div class="project-media">
             <img src="images/ThriftHaven.png" alt="ThriftHaven second-hand marketplace interface" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
             <span class="project-badge">Website</span>
@@ -433,7 +450,7 @@ github.com/dariusagbon</pre>
           </div>
         </article>
 
-        <article class="project-card group" data-category="automation">
+        <article class="project-card spotlight group" data-category="automation">
           <div class="project-media">
             <img src="images/automated-linkedin-content-pipeline.svg" alt="n8n workflow canvas for an automated LinkedIn content pipeline" class="w-full h-full object-contain group-hover:scale-105 transition duration-500" loading="lazy" />
             <span class="project-badge">Automation</span>
@@ -449,7 +466,7 @@ github.com/dariusagbon</pre>
           </div>
         </article>
 
-        <article class="project-card group" data-category="video">
+        <article class="project-card spotlight group" data-category="video">
           <div class="project-media">
             <video
               src="videos/vid.mp4"
