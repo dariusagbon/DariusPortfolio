@@ -207,6 +207,7 @@ if (!terminalEl) {
       { text: '  contact    how to reach me', cls: 'text-steel' },
       { text: '  resume     download my resume', cls: 'text-steel' },
       { text: '  github     open my GitHub', cls: 'text-steel' },
+      { text: '  linkedin   open my LinkedIn', cls: 'text-steel' },
       { text: '  clear      clear the screen', cls: 'text-steel' },
     ],
     whoami: () => [
@@ -233,6 +234,10 @@ if (!terminalEl) {
     github: () => {
       window.open('https://github.com/dariusagbon', '_blank', 'noopener');
       return [{ text: 'Opening github.com/dariusagbon…', cls: 'text-amber', href: 'https://github.com/dariusagbon' }];
+    },
+    linkedin: () => {
+      window.open('https://www.linkedin.com/in/darius-jay-o-agbon-b80612320', '_blank', 'noopener');
+      return [{ text: 'Opening LinkedIn…', cls: 'text-amber', href: 'https://www.linkedin.com/in/darius-jay-o-agbon-b80612320' }];
     },
     sudo: () => [{ text: 'Nice try. Hire me and we can talk about permissions.', cls: 'text-amber' }],
   };
