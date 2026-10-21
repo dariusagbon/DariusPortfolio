@@ -230,7 +230,7 @@ if (!terminalEl) {
       { text: 'phone  +63 963 063 7927', cls: 'text-paper' },
       { text: 'Or send a message in the Contact section.', cls: 'text-steel', href: '#contact' },
     ],
-    resume: () => [{ text: 'Darius-Agbon-Resume.md', cls: 'text-amber', href: 'Darius-Agbon-Resume.md', download: true }],
+    resume: () => [{ text: 'Darius-Agbon-Resume.pdf', cls: 'text-amber', href: 'Darius-Agbon-Resume.pdf', download: true }],
     github: () => {
       window.open('https://github.com/dariusagbon', '_blank', 'noopener');
       return [{ text: 'Opening github.com/dariusagbon…', cls: 'text-amber', href: 'https://github.com/dariusagbon' }];
