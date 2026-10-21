@@ -248,3 +248,44 @@ if (!terminalEl) {
 
   typeTerminal();
 }
+/* ---------- Works filter ---------- */
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('#works-grid .project-card');
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    projectCards.forEach(card => {
+      card.hidden = filter !== 'all' && card.dataset.category !== filter;
+    });
+  });
+});
+
+/* ---------- Video mute toggle ---------- */
+document.querySelectorAll('[data-unmute]').forEach(button => {
+  const video = button.closest('.project-media').querySelector('video');
+  button.addEventListener('click', () => {
+    video.muted = !video.muted;
+    button.setAttribute('aria-pressed', String(!video.muted));
+    button.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
+    button.querySelector('.mute-icon').classList.toggle('hidden', !video.muted);
+    button.querySelector('.unmute-icon').classList.toggle('hidden', video.muted);
+  });
+});
+
+/* ---------- Reveal sections on scroll ---------- */
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const revealer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => revealer.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('is-visible'));
+}

@@ -82,6 +82,7 @@
 </script>
 
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body class="bg-base text-paper font-body antialiased">
@@ -143,16 +144,20 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" class="relative">
+    <div class="hero-glow" aria-hidden="true"></div>
 
     <!-- ============ HERO ============ -->
-    <section id="home" aria-label="Introduction" class="px-6 pt-32 pb-20 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <section id="home" aria-label="Introduction" class="relative px-6 pt-36 pb-24 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
       <div>
-        <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-4">Davao City, Philippines</p>
-        <h1 class="font-display font-bold text-4xl sm:text-5xl leading-[1.1] text-paper">
-          I build the tools and keep operations running.
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <span class="status-pill"><span class="w-2 h-2 rounded-full bg-teal animate-pulse" aria-hidden="true"></span>Available for work</span>
+          <span class="font-mono text-xs uppercase tracking-[0.25em] text-steel">Davao City, PH</span>
+        </div>
+        <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-[3.4rem] leading-[1.05] tracking-tight text-paper">
+          I build the tools and keep operations <span class="text-amber">running.</span>
         </h1>
-        <p class="mt-4 text-paper/90 font-medium">
+        <p class="mt-5 font-mono text-sm text-teal">
           Virtual Assistant &amp; Programmer
         </p>
         <p class="mt-5 text-steel leading-relaxed max-w-md">
@@ -163,20 +168,23 @@
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-4">
-          <a href="#contact" class="inline-flex items-center justify-center rounded-md bg-amber text-base font-semibold text-sm px-5 py-3 hover:bg-amber/90 transition">
-            Get in touch
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-md bg-amber text-base font-semibold text-sm px-5 py-3 hover:bg-amber/90 hover:-translate-y-0.5 transition shadow-lg shadow-amber/20">
+            Get in touch <span aria-hidden="true">→</span>
           </a>
           <a href="https://github.com/dariusagbon" target="_blank" rel="noopener noreferrer" title="View Darius Agbon's GitHub profile (opens in new tab)" class="inline-flex items-center gap-2 rounded-md border border-line text-paper font-medium text-sm px-5 py-3 hover:border-teal hover:text-teal transition">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.41 7.86 10.94.57.1.78-.25.78-.56v-2.17c-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.2-3.1-.12-.29-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.58.23 2.75.11 3.04.75.81 1.2 1.84 1.2 3.1 0 4.43-2.69 5.41-5.25 5.7.42.36.78 1.08.78 2.17v3.21c0 .31.21.67.79.55C20.21 21.4 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
             View GitHub
             <span class="sr-only">(opens in new tab)</span>
           </a>
+          <a href="Darius-Agbon-Resume.md" download class="inline-flex items-center gap-1.5 text-sm font-medium text-steel hover:text-amber transition px-1 py-3">
+            Resume <span aria-hidden="true">↓</span>
+          </a>
         </div>
       </div>
 
       <!-- Signature element: live status terminal -->
       <div class="relative">
-        <div class="rounded-lg border border-line bg-panel shadow-2xl shadow-black/40 overflow-hidden" role="img" aria-label="Terminal showing Darius's availability status and skills">
+        <div class="terminal-card rounded-xl border border-line bg-panel shadow-2xl shadow-black/40 overflow-hidden" role="img" aria-label="Terminal showing Darius's availability status and skills">
           <div class="flex items-center gap-2 px-4 py-3 border-b border-line bg-panel2" aria-hidden="true">
             <span class="w-3 h-3 rounded-full bg-red-400/60"></span>
             <span class="w-3 h-3 rounded-full bg-amber/60"></span>
@@ -199,16 +207,16 @@ Java · Python · PHP · Laravel · SQL · JavaScript
 $ connect --github
 github.com/dariusagbon</pre>
           </noscript>
-          <pre id="terminal" class="font-mono text-[13px] sm:text-sm p-5 leading-7 min-h-[300px] whitespace-pre-wrap" aria-live="polite" aria-atomic="false"></pre>
+          <pre id="terminal" class="font-mono text-[13px] sm:text-sm p-5 leading-7 min-h-[420px] whitespace-pre-wrap" aria-live="polite" aria-atomic="false"></pre>
         </div>
         <p class="mt-3 text-xs text-steel font-mono" aria-live="off">Live availability — updates automatically</p>
       </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
-    <section id="about" aria-labelledby="about-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
-      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">About</p>
-      <h2 id="about-heading" class="font-display font-bold text-3xl text-paper mb-10">Profile</h2>
+    <section id="about" aria-labelledby="about-heading" class="reveal px-6 max-w-6xl mx-auto py-24 border-t border-line">
+      <p class="section-eyebrow"><span>01</span>About</p>
+      <h2 id="about-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-10">Profile</h2>
 
       <div class="grid lg:grid-cols-3 gap-10">
         <div class="lg:col-span-2 space-y-4 text-steel leading-relaxed">
@@ -248,223 +256,235 @@ github.com/dariusagbon</pre>
     </section>
 
     <!-- ============ SKILLS ============ -->
-    <section id="skills" aria-labelledby="skills-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
-      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Skills</p>
-      <h2 id="skills-heading" class="font-display font-bold text-3xl text-paper mb-10">What I work with</h2>
+    <section id="skills" aria-labelledby="skills-heading" class="reveal px-6 max-w-6xl mx-auto py-24 border-t border-line">
+      <p class="section-eyebrow"><span>02</span>Skills</p>
+      <h2 id="skills-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-10">What I work with</h2>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="rounded-lg border border-line bg-panel p-5">
+        <div class="skill-card">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">LANGUAGE</p>
-          <h3 class="text-paper font-semibold mb-3">Programming</h3>
-          <ul class="space-y-1.5 text-steel text-sm" aria-label="Programming languages">
-            <li>Java</li>
-            <li>Python</li>
-            <li>PHP</li>
-            <li>Laravel</li>
-            <li>SQL</li>
-            <li>JavaScript  </li>
+          <h3 class="text-paper font-semibold mb-4">Programming</h3>
+          <ul class="flex flex-wrap gap-2" aria-label="Programming languages">
+            <li class="skill-chip">Java</li>
+            <li class="skill-chip">Python</li>
+            <li class="skill-chip">PHP</li>
+            <li class="skill-chip">Laravel</li>
+            <li class="skill-chip">SQL</li>
+            <li class="skill-chip">JavaScript</li>
           </ul>
         </div>
 
-        <div class="rounded-lg border border-line bg-panel p-5">
+        <div class="skill-card">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">WEB</p>
-          <h3 class="text-paper font-semibold mb-3">Web &amp; Database</h3>
-          <ul class="space-y-1.5 text-steel text-sm" aria-label="Web and database skills">
-            <li>Web Development</li>
-            <li>Database Specialist</li>
-            <li>HTML &amp; CSS</li>
+          <h3 class="text-paper font-semibold mb-4">Web &amp; Database</h3>
+          <ul class="flex flex-wrap gap-2" aria-label="Web and database skills">
+            <li class="skill-chip">Web Development</li>
+            <li class="skill-chip">Database Specialist</li>
+            <li class="skill-chip">HTML &amp; CSS</li>
           </ul>
         </div>
 
-        <div class="rounded-lg border border-line bg-panel p-5">
+        <div class="skill-card">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">OPS</p>
-          <h3 class="text-paper font-semibold mb-3">Operations &amp; Support</h3>
-          <ul class="space-y-1.5 text-steel text-sm" aria-label="Operations and support skills">
-            <li>Product Research</li>
-            <li>Basic Accounting</li>
-            <li>Content Editing</li>
-            <li>Social Media Management</li>
+          <h3 class="text-paper font-semibold mb-4">Operations &amp; Support</h3>
+          <ul class="flex flex-wrap gap-2" aria-label="Operations and support skills">
+            <li class="skill-chip">Product Research</li>
+            <li class="skill-chip">Basic Accounting</li>
+            <li class="skill-chip">Content Editing</li>
+            <li class="skill-chip">Social Media Management</li>
           </ul>
         </div>
 
-        <div class="rounded-lg border border-line bg-panel p-5">
+        <div class="skill-card">
           <p class="font-mono text-xs text-amber tracking-widest mb-3" aria-hidden="true">TOOLS</p>
-          <h3 class="text-paper font-semibold mb-3">Tools &amp; Platforms</h3>
-          <ul class="space-y-1.5 text-steel text-sm" aria-label="Tools and platforms">
-            <li>SharePoint</li>
-            <li>Salesforce &amp; CRM systems</li>
-            <li>WordPress</li>
-            <li>Claude Code / Skills</li>
+          <h3 class="text-paper font-semibold mb-4">Tools &amp; Platforms</h3>
+          <ul class="flex flex-wrap gap-2" aria-label="Tools and platforms">
+            <li class="skill-chip">SharePoint</li>
+            <li class="skill-chip">Salesforce &amp; CRM systems</li>
+            <li class="skill-chip">WordPress</li>
+            <li class="skill-chip">Claude Code / Skills</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
-    <section id="experience" aria-labelledby="experience-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
-      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Experience</p>
-      <h2 id="experience-heading" class="font-display font-bold text-3xl text-paper mb-10">Work log</h2>
+    <section id="experience" aria-labelledby="experience-heading" class="reveal px-6 max-w-6xl mx-auto py-24 border-t border-line">
+      <p class="section-eyebrow"><span>03</span>Experience</p>
+      <h2 id="experience-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-10">Work log</h2>
 
-      <ol class="space-y-10 border-l border-line ml-1 pl-8" aria-label="Work history timeline">
+      <ol class="space-y-12 border-l border-line ml-1 pl-8" aria-label="Work history timeline">
 
-        <li class="relative">
+        <li class="relative md:grid md:grid-cols-[9rem_1fr] md:gap-8">
           <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-amber ring-4 ring-base" aria-hidden="true"></span>
-          <p class="font-mono text-xs text-steel mb-1 tabular-nums"><time datetime="2024/2025">2024 – 2025</time></p>
+          <p class="font-mono text-xs text-steel mb-1 md:mt-1.5 tabular-nums"><time datetime="2024/2025">2024 – 2025</time></p>
+          <div>
           <h3 class="text-paper font-semibold text-lg">Intern Programmer — University of Mindanao</h3>
           <ul class="mt-3 space-y-2 text-steel text-sm leading-relaxed list-disc list-outside ml-5">
             <li>Designed and built applications using Java 8 features such as lambda expressions and the Streams API to keep code clean and efficient.</li>
             <li>Connected Java applications to relational databases with JDBC, writing efficient SQL queries and designing database schemas.</li>
           </ul>
+          </div>
         </li>
 
-        <li class="relative">
+        <li class="relative md:grid md:grid-cols-[9rem_1fr] md:gap-8">
           <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-teal ring-4 ring-base" aria-hidden="true"></span>
-          <p class="font-mono text-xs text-steel mb-1 tabular-nums"><time datetime="2023/2024">2023 – 2024</time></p>
+          <p class="font-mono text-xs text-steel mb-1 md:mt-1.5 tabular-nums"><time datetime="2023/2024">2023 – 2024</time></p>
+          <div>
           <h3 class="text-paper font-semibold text-lg">Social Media Manager — Shokuy Shoe Company</h3>
           <ul class="mt-3 space-y-2 text-steel text-sm leading-relaxed list-disc list-outside ml-5">
             <li>Worked with the design team to produce graphics, video and other multimedia content that improved brand visibility.</li>
             <li>Tracked social media trends, algorithms and best practices and adjusted strategy to stay competitive.</li>
             <li>Monitored performance with Google Analytics, Hootsuite and Sprout Social, turning the data into insights that grew content performance and audience.</li>
           </ul>
+          </div>
         </li>
 
-        <li class="relative">
+        <li class="relative md:grid md:grid-cols-[9rem_1fr] md:gap-8">
           <span class="absolute -left-[37px] top-1 w-3 h-3 rounded-full bg-steel ring-4 ring-base" aria-hidden="true"></span>
-          <p class="font-mono text-xs text-steel mb-1 tabular-nums">Ongoing</p>
+          <p class="font-mono text-xs text-steel mb-1 md:mt-1.5 tabular-nums">Ongoing</p>
+          <div>
           <h3 class="text-paper font-semibold text-lg">Product Research — Freelance / E-commerce</h3>
           <ul class="mt-3 space-y-2 text-steel text-sm leading-relaxed list-disc list-outside ml-5">
             <li>Source profitable products using Seller AMP SAS and Keepa, keeping the research process efficient and reliable.</li>
             <li>Find strong leads through reverse search and other product-discovery methods.</li>
           </ul>
+          </div>
         </li>
 
       </ol>
     </section>
 
     <!-- ============ WORKS ============ -->
-    <section id="works" aria-labelledby="works-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
-      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Works</p>
-      <h2 id="works-heading" class="font-display font-bold text-3xl text-paper mb-3">Selected works</h2>
-      <p class="text-steel max-w-xl mb-12">
-        A mix of websites I've built, workflow automations I've designed, videos I've edited, and UI designs I've put together.
-      </p>
-
-      <!-- ---- Automation ---- -->
-      <div class="mb-14">
-        <h3 class="font-mono text-xs uppercase tracking-widest text-amber mb-5">Automation</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Automation projects">
-
-          <article class="project-card group rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
-            <div class="aspect-video bg-panel2 overflow-hidden">
-              <img src="images/automated-linkedin-content-pipeline.svg" alt="n8n workflow canvas for an automated LinkedIn content pipeline" class="w-full h-full object-contain group-hover:scale-105 transition duration-300" />
-            </div>
-            <div class="p-4">
-              <h4 class="text-paper font-semibold">Automated LinkedIn Content Pipeline</h4>
-              <p class="text-steel text-sm mt-1">Daily research, writing, QA, and publishing workflow.</p>
-              <div class="flex flex-wrap gap-2 mt-3" aria-label="Automated LinkedIn Content Pipeline technologies"><span class="tech-tag">Automation</span><span class="tech-tag">n8n</span><span class="tech-tag">API Integration</span><span class="tech-tag">LLM Workflows</span><span class="tech-tag">No-Code/Low-Code</span></div>
-              <button type="button" class="case-toggle mt-4" aria-expanded="false" aria-controls="linkedin-pipeline-details">Read case study <span aria-hidden="true">+</span></button>
-              <div id="linkedin-pipeline-details" class="case-study" hidden><p>Problem: producing consistent, high-quality LinkedIn content manually takes hours each week. Solution: a daily n8n workflow loads configuration, researches topics through RSS and live web search, merges and dedupes results against content history, scores candidates, generates a draft with an LLM, and runs a separate humanize and quality-scoring pass. Posts scoring 80 or higher publish through the LinkedIn API; lower-scoring drafts route to human review. Every published, review, and failure outcome is logged to a tracking sheet. Outcome: designed to reduce weekly content-production time while keeping publishing consistent and auditable.</p></div>
-            </div>
-          </article>
-
+    <section id="works" aria-labelledby="works-heading" class="reveal px-6 max-w-6xl mx-auto py-24 border-t border-line">
+      <p class="section-eyebrow"><span>04</span>Works</p>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <h2 id="works-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-3">Selected works</h2>
+          <p class="text-steel max-w-xl">
+            A mix of websites I've built, workflow automations I've designed, and videos I've edited.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter projects by category">
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">Websites</button>
+          <button type="button" class="filter-btn" data-filter="automation" aria-pressed="false">Automation</button>
+          <button type="button" class="filter-btn" data-filter="video" aria-pressed="false">Video</button>
         </div>
       </div>
 
-      <!-- ---- Websites ---- -->
-      <div class="mb-14">
-        <h3 class="font-mono text-xs uppercase tracking-widest text-amber mb-5">Websites</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Website projects">
+      <!--
+        WORK CARD TEMPLATE — copy/paste an <article> for each project.
+        1. Set data-category to web, automation, or video
+        2. Replace the image path, alt text, title, description, and tags
+        3. Give the case study a unique id and point aria-controls at it
+        4. Replace the href with your live link / repo link
+      -->
+      <div id="works-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Projects">
 
-          <!--
-            WORK CARD TEMPLATE — copy/paste this block for each project.
-            1. Replace images/work-placeholder.jpg with your image path
-            2. Replace the alt text, title, description
-            3. Replace href="#" with your live link / repo link
-          -->
-          <article class="project-card group rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
-            <div class="aspect-video bg-panel2 overflow-hidden">
-              <img src="images/LexiCase.png" alt="LexiCase legal case management system dashboard" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
-            </div>
-            <div class="p-4">
-              <h4 class="text-paper font-semibold">LexiCase</h4>
-              <p class="text-steel text-sm mt-1">Legal case management system</p>
-              <div class="flex flex-wrap gap-2 mt-3" aria-label="LexiCase technology stack"><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">Blade</span></div>
-              <button type="button" class="case-toggle mt-4" aria-expanded="false" aria-controls="lexicase-details">Read case study <span aria-hidden="true">+</span></button>
-              <div id="lexicase-details" class="case-study" hidden><p>Problem: legal case information needed a clearer home. Role: I designed and built the workflow, database, and interface. Outcome: a focused system for organizing matters, clients, and case progress.</p></div>
-              <a href="https://lexicase-legal-case-management-system.onrender.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-mono text-xs text-teal mt-3 hover:underline">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
-            </div>
-          </article>
-
-          <article class="project-card group rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
-            <div class="aspect-video bg-panel2 overflow-hidden">
-              <img src="images/ThriftHaven.png" alt="ThriftHaven second-hand marketplace interface" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
-            </div>
-            <div class="p-4">
-              <h4 class="text-paper font-semibold">ThriftHaven</h4>
-              <p class="text-steel text-sm mt-1">E-commerce platform for second-hand goods.</p>
-              <div class="flex flex-wrap gap-2 mt-3" aria-label="ThriftHaven technology stack"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
-              <button type="button" class="case-toggle mt-4" aria-expanded="false" aria-controls="thrifthaven-details">Read case study <span aria-hidden="true">+</span></button>
-              <div id="thrifthaven-details" class="case-study" hidden><p>Problem: second-hand shoppers needed a more approachable browsing experience. Role: I shaped the storefront layout and interaction details. Outcome: a clearer marketplace experience that makes products easier to scan and explore.</p></div>
-              <a href="https://thrift-haven-zvk1.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-mono text-xs text-teal mt-3 hover:underline">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
-            </div>
-          </article>
-
-          <article class="project-card group rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
-            <div class="aspect-video bg-panel2 overflow-hidden">
-              <img src="images/XclusiveCare.webp" alt="Xclusive Care Services homepage with a caregiver and senior client and the headline Compassionate In-Home Care Across Georgia" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" />
-            </div>
-            <div class="p-4">
-              <h4 class="text-paper font-semibold">Xclusive Care Services</h4>
-              <p class="text-steel text-sm mt-1">Business website for an in-home care agency.</p>
-              <div class="flex flex-wrap gap-2 mt-3" aria-label="Xclusive Care Services technology stack"><span class="tech-tag">Web Design</span><span class="tech-tag">Responsive Design</span></div>
-              <button type="button" class="case-toggle mt-4" aria-expanded="false" aria-controls="xclusive-care-details">Read case study <span aria-hidden="true">+</span></button>
-              <div id="xclusive-care-details" class="case-study" hidden><p>Problem: a home care agency needed a professional online presence to reach families looking for in-home support. Role: I designed and built the website. Outcome: a clear, trustworthy site that presents the agency's care services and makes it easy for families to get in touch.</p></div>
-              <a href="https://www.xclusivecareservices.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-mono text-xs text-teal mt-3 hover:underline">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-        <!-- ---- Video Edits ---- -->
-      <div class="mb-14">
-        <h3 class="font-mono text-xs uppercase tracking-widest text-amber mb-5">Video Edits</h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Video editing projects">
-
-          <div class="group relative rounded-lg border border-line bg-panel overflow-hidden hover:border-teal transition">
-            <div class="relative aspect-video bg-panel2 overflow-hidden">
-              <video
-                src="videos/vid.mp4"
-                poster="images/ThriftHaven.png"
-                class="w-full h-full object-cover"
-                autoplay
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                aria-label="Advertising video for King Desini" title="King Desini advertising video thumbnail">
-                Your browser doesn't support embedded video.
-              </video>
-              <button type="button" data-unmute class="absolute bottom-3 right-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-base/70 text-paper hover:bg-base transition" aria-pressed="false" aria-label="Unmute video">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 unmute-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-              </button>
-            </div>
-            <div class="p-4">
-              <h4 class="text-paper font-semibold">King Desini</h4>
-              <p class="text-steel text-sm mt-1">Advertising video for a local business.</p>
-              <a href="videos/vid.mp4" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-mono text-xs text-teal mt-3 hover:underline">Open full video ↗</a>
+        <article class="project-card group" data-category="web">
+          <div class="project-media">
+            <img src="images/XclusiveCare.webp" alt="Xclusive Care Services homepage with a caregiver and senior client and the headline Compassionate In-Home Care Across Georgia" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="project-badge">Website</span>
+          </div>
+          <div class="project-body">
+            <h3 class="text-paper font-semibold text-lg">Xclusive Care Services</h3>
+            <p class="text-steel text-sm mt-1">Business website for an in-home care agency.</p>
+            <div class="flex flex-wrap gap-2 mt-4" aria-label="Xclusive Care Services technology stack"><span class="tech-tag">Web Design</span><span class="tech-tag">Responsive Design</span></div>
+            <div id="xclusive-care-details" class="case-study" hidden><p>Problem: a home care agency needed a professional online presence to reach families looking for in-home support. Role: I designed and built the website. Outcome: a clear, trustworthy site that presents the agency's care services and makes it easy for families to get in touch.</p></div>
+            <div class="project-actions">
+              <button type="button" class="case-toggle" aria-expanded="false" aria-controls="xclusive-care-details">Case study <span aria-hidden="true">+</span></button>
+              <a href="https://www.xclusivecareservices.com/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
             </div>
           </div>
+        </article>
 
-        </div>
-      </div>  
-  </section>
+        <article class="project-card group" data-category="web">
+          <div class="project-media">
+            <img src="images/LexiCase.png" alt="LexiCase legal case management system dashboard" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="project-badge">Website</span>
+          </div>
+          <div class="project-body">
+            <h3 class="text-paper font-semibold text-lg">LexiCase</h3>
+            <p class="text-steel text-sm mt-1">Legal case management system.</p>
+            <div class="flex flex-wrap gap-2 mt-4" aria-label="LexiCase technology stack"><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">Blade</span></div>
+            <div id="lexicase-details" class="case-study" hidden><p>Problem: legal case information needed a clearer home. Role: I designed and built the workflow, database, and interface. Outcome: a focused system for organizing matters, clients, and case progress.</p></div>
+            <div class="project-actions">
+              <button type="button" class="case-toggle" aria-expanded="false" aria-controls="lexicase-details">Case study <span aria-hidden="true">+</span></button>
+              <a href="https://lexicase-legal-case-management-system.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card group" data-category="web">
+          <div class="project-media">
+            <img src="images/ThriftHaven.png" alt="ThriftHaven second-hand marketplace interface" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="project-badge">Website</span>
+          </div>
+          <div class="project-body">
+            <h3 class="text-paper font-semibold text-lg">ThriftHaven</h3>
+            <p class="text-steel text-sm mt-1">E-commerce platform for second-hand goods.</p>
+            <div class="flex flex-wrap gap-2 mt-4" aria-label="ThriftHaven technology stack"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+            <div id="thrifthaven-details" class="case-study" hidden><p>Problem: second-hand shoppers needed a more approachable browsing experience. Role: I shaped the storefront layout and interaction details. Outcome: a clearer marketplace experience that makes products easier to scan and explore.</p></div>
+            <div class="project-actions">
+              <button type="button" class="case-toggle" aria-expanded="false" aria-controls="thrifthaven-details">Case study <span aria-hidden="true">+</span></button>
+              <a href="https://thrift-haven-zvk1.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card group" data-category="automation">
+          <div class="project-media">
+            <img src="images/automated-linkedin-content-pipeline.svg" alt="n8n workflow canvas for an automated LinkedIn content pipeline" class="w-full h-full object-contain group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="project-badge">Automation</span>
+          </div>
+          <div class="project-body">
+            <h3 class="text-paper font-semibold text-lg">Automated LinkedIn Content Pipeline</h3>
+            <p class="text-steel text-sm mt-1">Daily research, writing, QA, and publishing workflow.</p>
+            <div class="flex flex-wrap gap-2 mt-4" aria-label="Automated LinkedIn Content Pipeline technologies"><span class="tech-tag">n8n</span><span class="tech-tag">API Integration</span><span class="tech-tag">LLM Workflows</span><span class="tech-tag">No-Code/Low-Code</span></div>
+            <div id="linkedin-pipeline-details" class="case-study" hidden><p>Problem: producing consistent, high-quality LinkedIn content manually takes hours each week. Solution: a daily n8n workflow loads configuration, researches topics through RSS and live web search, merges and dedupes results against content history, scores candidates, generates a draft with an LLM, and runs a separate humanize and quality-scoring pass. Posts scoring 80 or higher publish through the LinkedIn API; lower-scoring drafts route to human review. Every published, review, and failure outcome is logged to a tracking sheet. Outcome: designed to reduce weekly content-production time while keeping publishing consistent and auditable.</p></div>
+            <div class="project-actions">
+              <button type="button" class="case-toggle" aria-expanded="false" aria-controls="linkedin-pipeline-details">Case study <span aria-hidden="true">+</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card group" data-category="video">
+          <div class="project-media">
+            <video
+              src="videos/vid.mp4"
+              class="w-full h-full object-cover"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Advertising video for King Desini" title="King Desini advertising video">
+              Your browser doesn't support embedded video.
+            </video>
+            <span class="project-badge">Video</span>
+            <button type="button" data-unmute class="absolute bottom-3 right-3 inline-flex items-center justify-center w-8 h-8 rounded-full bg-base/70 text-paper hover:bg-base transition" aria-pressed="false" aria-label="Unmute video">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 mute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 unmute-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            </button>
+          </div>
+          <div class="project-body">
+            <h3 class="text-paper font-semibold text-lg">King Desini</h3>
+            <p class="text-steel text-sm mt-1">Advertising video for a local business.</p>
+            <div class="flex flex-wrap gap-2 mt-4" aria-label="King Desini project type"><span class="tech-tag">Video Editing</span><span class="tech-tag">Advertising</span></div>
+            <div class="project-actions">
+              <a href="videos/vid.mp4" target="_blank" rel="noopener noreferrer" class="project-link">Open full video ↗<span class="sr-only"> (opens in new tab)</span></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
 
     <!-- ============ CONTACT ============ -->
-    <section id="contact" aria-labelledby="contact-heading" class="px-6 max-w-6xl mx-auto py-20 border-t border-line">
-      <p class="font-mono text-xs uppercase tracking-[0.35em] text-teal mb-3">Contact</p>
-      <h2 id="contact-heading" class="font-display font-bold text-3xl text-paper mb-3">Let's work together</h2>
+    <section id="contact" aria-labelledby="contact-heading" class="reveal px-6 max-w-6xl mx-auto py-24 border-t border-line">
+      <p class="section-eyebrow"><span>05</span>Contact</p>
+      <h2 id="contact-heading" class="font-display font-bold text-3xl sm:text-4xl text-paper mb-3">Let's work together</h2>
       <p class="text-steel max-w-xl mb-10">
         Open to full-time and part-time roles, available during PST business hours. Reach out
         directly or send a message below.
