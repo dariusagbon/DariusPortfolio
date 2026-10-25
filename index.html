@@ -423,12 +423,36 @@ github.com/dariusagbon</pre>
 
       <!--
         WORK CARD TEMPLATE — copy/paste an <article> for each project.
-        1. Set data-category to web, automation, or video
+        1. Set data-category to web, automation, or video (filter counts update automatically)
         2. Replace the image path, alt text, title, description, and tags
-        3. Give the case study a unique id and point aria-controls at it
+        3. Fill in the case study's Problem / Role or Solution / Outcome rows,
+           give it a unique id, and point the button's aria-controls at it
         4. Replace the href with your live link / repo link
+        Add project-card--featured to one card to show it full width at the top.
       -->
+      <p id="works-status" class="sr-only" aria-live="polite"></p>
       <div id="works-grid" class="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-label="Projects">
+
+        <article class="project-card project-card--featured spotlight group" data-category="web">
+          <div class="project-media">
+            <img src="images/PickleHub.webp" width="1200" height="750" alt="PickleHub homepage with a photo of the outdoor pickleball court and the headline Play the Long Game" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="project-badge">Web App</span>
+          </div>
+          <div class="project-body">
+            <p class="featured-label">Featured project</p>
+            <h3 class="font-display text-paper font-bold text-2xl sm:text-3xl">PickleHub</h3>
+            <p class="text-steel mt-2">Pickleball club site for court bookings, events, and live scoring.</p>
+            <div class="flex flex-wrap gap-2 mt-4" aria-label="PickleHub technology stack"><span class="tech-tag">Laravel</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Docker</span></div>
+            <div class="case-study"><dl>
+              <div><dt>Problem</dt><dd>A single-court pickleball club needed one place to handle court reservations, events, and match scoring.</dd></div>
+              <div><dt>Solution</dt><dd>A Laravel web app with a monthly availability calendar and hourly bookings (including guest bookings with conflict prevention), event registration with randomized doubles matchmaking, PIN-protected live score entry, and a courtside scoreboard that follows official side-out and server-rotation rules. An admin dashboard manages events, bookings, and announcements.</dd></div>
+              <div><dt>Outcome</dt><dd>A complete club platform, live on Render with Docker and PostgreSQL, with automated tests covering the scoring rules.</dd></div>
+            </dl></div>
+            <div class="project-actions">
+              <a href="https://garaje-picklehub.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
+            </div>
+          </div>
+        </article>
 
         <article class="project-card spotlight group" data-category="web">
           <div class="project-media">
@@ -439,7 +463,7 @@ github.com/dariusagbon</pre>
             <h3 class="text-paper font-semibold text-lg">Xclusive Care Services</h3>
             <p class="text-steel text-sm mt-1">Business website for an in-home care agency.</p>
             <div class="flex flex-wrap gap-2 mt-4" aria-label="Xclusive Care Services technology stack"><span class="tech-tag">Web Design</span><span class="tech-tag">Responsive Design</span></div>
-            <div id="xclusive-care-details" class="case-study" hidden><p>Problem: a home care agency needed a professional online presence to reach families looking for in-home support. Role: I designed and built the website. Outcome: a clear, trustworthy site that presents the agency's care services and makes it easy for families to get in touch.</p></div>
+            <div id="xclusive-care-details" class="case-study" hidden><dl><div><dt>Problem</dt><dd>A home care agency needed a professional online presence to reach families looking for in-home support.</dd></div><div><dt>Role</dt><dd>I designed and built the website.</dd></div><div><dt>Outcome</dt><dd>A clear, trustworthy site that presents the agency's care services and makes it easy for families to get in touch.</dd></div></dl></div>
             <div class="project-actions">
               <button type="button" class="case-toggle" aria-expanded="false" aria-controls="xclusive-care-details">Case study <span aria-hidden="true">+</span></button>
               <a href="https://www.xclusivecareservices.com/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
@@ -447,19 +471,18 @@ github.com/dariusagbon</pre>
           </div>
         </article>
 
-        <article class="project-card spotlight group" data-category="web">
+        <article class="project-card spotlight group" data-category="automation">
           <div class="project-media">
-            <img src="images/PickleHub.webp" width="1200" height="750" alt="PickleHub homepage with a photo of the outdoor pickleball court and the headline Play the Long Game" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
-            <span class="project-badge">Web App</span>
+            <img src="images/automated-linkedin-content-pipeline.svg" alt="n8n workflow canvas for an automated LinkedIn content pipeline" class="w-full h-full object-contain group-hover:scale-105 transition duration-500" loading="lazy" />
+            <span class="project-badge">Automation</span>
           </div>
           <div class="project-body">
-            <h3 class="text-paper font-semibold text-lg">PickleHub</h3>
-            <p class="text-steel text-sm mt-1">Pickleball club site for court bookings, events, and live scoring.</p>
-            <div class="flex flex-wrap gap-2 mt-4" aria-label="PickleHub technology stack"><span class="tech-tag">Laravel</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Docker</span></div>
-            <div id="picklehub-details" class="case-study" hidden><p>Problem: a single-court pickleball club needed one place to handle court reservations, events, and match scoring. Solution: a Laravel web app with a monthly availability calendar and hourly bookings (including guest bookings with conflict prevention), event registration with randomized doubles matchmaking, PIN-protected live score entry, and a standalone courtside scoreboard that follows official side-out and server-rotation rules. An admin dashboard manages events, bookings, and announcements. Outcome: a complete club platform, live on Render with Docker and PostgreSQL, with automated tests covering the scoring rules.</p></div>
+            <h3 class="text-paper font-semibold text-lg">Automated LinkedIn Content Pipeline</h3>
+            <p class="text-steel text-sm mt-1">Daily research, writing, QA, and publishing workflow.</p>
+            <div class="flex flex-wrap gap-2 mt-4" aria-label="Automated LinkedIn Content Pipeline technologies"><span class="tech-tag">n8n</span><span class="tech-tag">API Integration</span><span class="tech-tag">LLM Workflows</span><span class="tech-tag">No-Code/Low-Code</span></div>
+            <div id="linkedin-pipeline-details" class="case-study" hidden><dl><div><dt>Problem</dt><dd>Producing consistent, high-quality LinkedIn content manually takes hours each week.</dd></div><div><dt>Solution</dt><dd>A daily n8n workflow loads configuration, researches topics through RSS and live web search, merges and dedupes results against content history, scores candidates, generates a draft with an LLM, and runs a separate humanize and quality-scoring pass. Posts scoring 80 or higher publish through the LinkedIn API; lower-scoring drafts route to human review. Every published, review, and failure outcome is logged to a tracking sheet.</dd></div><div><dt>Outcome</dt><dd>Designed to reduce weekly content-production time while keeping publishing consistent and auditable.</dd></div></dl></div>
             <div class="project-actions">
-              <button type="button" class="case-toggle" aria-expanded="false" aria-controls="picklehub-details">Case study <span aria-hidden="true">+</span></button>
-              <a href="https://garaje-picklehub.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
+              <button type="button" class="case-toggle" aria-expanded="false" aria-controls="linkedin-pipeline-details">Case study <span aria-hidden="true">+</span></button>
             </div>
           </div>
         </article>
@@ -467,13 +490,13 @@ github.com/dariusagbon</pre>
         <article class="project-card spotlight group" data-category="web">
           <div class="project-media">
             <img src="images/LexiCase.webp" width="1200" height="566" alt="LexiCase legal case management system dashboard" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" loading="lazy" />
-            <span class="project-badge">Website</span>
+            <span class="project-badge">Web App</span>
           </div>
           <div class="project-body">
             <h3 class="text-paper font-semibold text-lg">LexiCase</h3>
             <p class="text-steel text-sm mt-1">Legal case management system.</p>
             <div class="flex flex-wrap gap-2 mt-4" aria-label="LexiCase technology stack"><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">Blade</span></div>
-            <div id="lexicase-details" class="case-study" hidden><p>Problem: legal case information needed a clearer home. Role: I designed and built the workflow, database, and interface. Outcome: a focused system for organizing matters, clients, and case progress.</p></div>
+            <div id="lexicase-details" class="case-study" hidden><dl><div><dt>Problem</dt><dd>Legal case information needed a clearer home.</dd></div><div><dt>Role</dt><dd>I designed and built the workflow, database, and interface.</dd></div><div><dt>Outcome</dt><dd>A focused system for organizing matters, clients, and case progress.</dd></div></dl></div>
             <div class="project-actions">
               <button type="button" class="case-toggle" aria-expanded="false" aria-controls="lexicase-details">Case study <span aria-hidden="true">+</span></button>
               <a href="https://lexicase-legal-case-management-system.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
@@ -490,26 +513,10 @@ github.com/dariusagbon</pre>
             <h3 class="text-paper font-semibold text-lg">ThriftHaven</h3>
             <p class="text-steel text-sm mt-1">E-commerce platform for second-hand goods.</p>
             <div class="flex flex-wrap gap-2 mt-4" aria-label="ThriftHaven technology stack"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
-            <div id="thrifthaven-details" class="case-study" hidden><p>Problem: second-hand shoppers needed a more approachable browsing experience. Role: I shaped the storefront layout and interaction details. Outcome: a clearer marketplace experience that makes products easier to scan and explore.</p></div>
+            <div id="thrifthaven-details" class="case-study" hidden><dl><div><dt>Problem</dt><dd>Second-hand shoppers needed a more approachable browsing experience.</dd></div><div><dt>Role</dt><dd>I shaped the storefront layout and interaction details.</dd></div><div><dt>Outcome</dt><dd>A clearer marketplace experience that makes products easier to scan and explore.</dd></div></dl></div>
             <div class="project-actions">
               <button type="button" class="case-toggle" aria-expanded="false" aria-controls="thrifthaven-details">Case study <span aria-hidden="true">+</span></button>
               <a href="https://thrift-haven-zvk1.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">View site ↗<span class="sr-only"> (opens in new tab)</span></a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card spotlight group" data-category="automation">
-          <div class="project-media">
-            <img src="images/automated-linkedin-content-pipeline.svg" alt="n8n workflow canvas for an automated LinkedIn content pipeline" class="w-full h-full object-contain group-hover:scale-105 transition duration-500" loading="lazy" />
-            <span class="project-badge">Automation</span>
-          </div>
-          <div class="project-body">
-            <h3 class="text-paper font-semibold text-lg">Automated LinkedIn Content Pipeline</h3>
-            <p class="text-steel text-sm mt-1">Daily research, writing, QA, and publishing workflow.</p>
-            <div class="flex flex-wrap gap-2 mt-4" aria-label="Automated LinkedIn Content Pipeline technologies"><span class="tech-tag">n8n</span><span class="tech-tag">API Integration</span><span class="tech-tag">LLM Workflows</span><span class="tech-tag">No-Code/Low-Code</span></div>
-            <div id="linkedin-pipeline-details" class="case-study" hidden><p>Problem: producing consistent, high-quality LinkedIn content manually takes hours each week. Solution: a daily n8n workflow loads configuration, researches topics through RSS and live web search, merges and dedupes results against content history, scores candidates, generates a draft with an LLM, and runs a separate humanize and quality-scoring pass. Posts scoring 80 or higher publish through the LinkedIn API; lower-scoring drafts route to human review. Every published, review, and failure outcome is logged to a tracking sheet. Outcome: designed to reduce weekly content-production time while keeping publishing consistent and auditable.</p></div>
-            <div class="project-actions">
-              <button type="button" class="case-toggle" aria-expanded="false" aria-controls="linkedin-pipeline-details">Case study <span aria-hidden="true">+</span></button>
             </div>
           </div>
         </article>
@@ -542,7 +549,6 @@ github.com/dariusagbon</pre>
             </div>
           </div>
         </article>
-
       </div>
     </section>
 

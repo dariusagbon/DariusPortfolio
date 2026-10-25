@@ -394,13 +394,20 @@ document.querySelectorAll('.stagger').forEach(group => {
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('#works-grid .project-card');
 
+const worksStatus = document.getElementById('works-status');
+const matches = (card, filter) => filter === 'all' || card.dataset.category === filter;
+
 filterButtons.forEach(button => {
+  const count = Array.from(projectCards).filter(card => matches(card, button.dataset.filter)).length;
+  button.insertAdjacentHTML('beforeend', `<span class="filter-count">${count}</span>`);
+
   button.addEventListener('click', () => {
     const filter = button.dataset.filter;
     filterButtons.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
     projectCards.forEach(card => {
-      card.hidden = filter !== 'all' && card.dataset.category !== filter;
+      card.hidden = !matches(card, filter);
     });
+    if (worksStatus) worksStatus.textContent = `Showing ${count} project${count === 1 ? '' : 's'}`;
   });
 });
 
