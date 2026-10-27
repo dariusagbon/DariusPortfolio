@@ -216,9 +216,10 @@ if (!terminalEl) {
       { text: 'I build practical software and keep digital operations organized.', cls: 'text-steel' },
     ],
     skills: () => [
-      { text: 'code   Java · Python · PHP · Laravel · SQL · JS', cls: 'text-paper' },
-      { text: 'ops    CRM · Product Research · Content', cls: 'text-paper' },
-      { text: 'tools  SharePoint · Salesforce · WordPress · n8n', cls: 'text-paper' },
+      { text: 'code     Java · Python · PHP · Laravel · SQL · JS', cls: 'text-paper' },
+      { text: 'ai       n8n · LLM Workflows · API Integration', cls: 'text-paper' },
+      { text: 'support  Troubleshooting · Accounts · Help Desk (1 yr)', cls: 'text-paper' },
+      { text: 'ops      Admin · CRM · SharePoint · Product Research', cls: 'text-paper' },
     ],
     projects: () => [
       ...Array.from(document.querySelectorAll('#works-grid .project-card h3'))
